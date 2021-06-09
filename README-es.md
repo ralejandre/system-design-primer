@@ -2,7 +2,7 @@
 
 **Ayuda [traduciendo](TRANSLATIONS.md) ésta guía!**
 
-# El manual de diseño del sistema
+# El manual de diseño de sistemas
 
 <p align="center">
   <img src="images/jj3A5N8.png">
