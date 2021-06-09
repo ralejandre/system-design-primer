@@ -192,7 +192,6 @@ Revisa la guia de contribucion [Pautas de contribución](CONTRIBUTING.md).
 
 **A: No, no necesitas saber todo aqui para prepararte para le entrevista**.
 
-What you are asked in an interview depends on variables such as:
 Lo que se te pregunta en una entrevista depende de variables como:
 
 * Cuanta experiencia tienes
