@@ -100,4 +100,107 @@ Revisa la guia de contribucion [Pautas de contribución](CONTRIBUTING.md).
   <br/>
 </p>
 
-* [Temario de diseñeno de sistemas: empiezan aqui]
+* [Temario de diseño de sistemas: empiezan aqui](#system-design-topics-start-here)
+* [Paso 1: Revisa la escalabilidad video conferencia](#step-1-review-the-scalability-video-lecture)
+    * [Step 2: Revisa la escalabilidad articulo](#step-2-review-the-scalability-article)
+    * [Siguientes pasos](#next-steps)
+* [Desempeño vs escalabilidad](#performance-vs-scalability)
+* [Latencia vs rendimiento](#latency-vs-throughput)
+* [Disponibilidad vs consistencia](#availability-vs-consistency)
+    * [Teorema CAP](#cap-theorem)
+        * [CP - consistencya y tolerancia al particionado](#cp---consistency-and-partition-tolerance)
+        * [AP - Disponibilidad y tolerancia al particionado](#ap---availability-and-partition-tolerance)
+* [Patrones de consistencia](#consistency-patterns)
+    * [Consistencia debild](#weak-consistency)
+    * [Consistencia eventual](#eventual-consistency)
+    * [Consistencia fuerte](#strong-consistency)
+* [Patrones de disponibilidad](#availability-patterns)
+    * [Conmutacion por error](#fail-over)
+    * [Replicación](#replication)
+    * [Disponibilidad en numeros](#availability-in-numbers)
+* [Sistema de nombres de dominio](#domain-name-system)
+* [Red de entrega de contenidos](#content-delivery-network)
+    * [CDNs de empuje](#push-cdns)
+    * [CDNs de jale](#pull-cdns)
+* [Equilibrador de carga](#load-balancer)
+    * [Activo-pasivo](#active-passive)
+    * [Activo-activo](#active-active)
+    * [Nivel 4 equilibrador de carga](#layer-4-load-balancing)
+    * [Nivel 7 equilibrador de carga](#layer-7-load-balancing)
+    * [Escalado horizontal](#horizontal-scaling)
+* [Proxy inverso (servidor web)](#reverse-proxy-web-server)
+    * [Equilibrador de carga vs Proxy inverso](#load-balancer-vs-reverse-proxy)
+* [Nivel de Applicacion](#application-layer)
+    * [Microservicios](#microservices)
+    * [Descubrimiento de servicios](#service-discovery)
+* [Base de Datos](#database)
+    * [Sistema de gestión de bases de datos relacionales (RDBMS)](#relational-database-management-system-rdbms)
+        * [Amo-esclavo replicación](#master-slave-replication)
+        * [Amo-amo replicación](#master-master-replication)
+        * [Federación](#federation)
+        * [Fragmentación](#sharding)
+        * [Desnormalización](#denormalization)
+        * [Ajuste de SQL](#sql-tuning)
+    * [NoSQL](#nosql)
+        * [Almacén de clave-valor](#key-value-store)
+        * [Almacén de documentos](#document-store)
+        * [Tienda de columna ancha](#wide-column-store)
+        * [Base de datos de gráfos](#graph-database)
+    * [SQL o NoSQL](#sql-or-nosql)
+* [Cache](#cache)
+    * [Almacenamiento en caché del cliente](#client-caching)
+    * [Almacenamiento en caché del CDN](#cdn-caching)
+    * [Almacenamiento en caché del servidor web](#web-server-caching)
+    * [Almacenamiento en caché del la base de datos](#database-caching)
+    * [Almacenamiento en caché de la aplicación](#application-caching)
+    * [Almacenamiento en caché a nivel de consulta de la base de datos](#caching-at-the-database-query-level)
+    * [Almacenamiento en caché a nivel de objeto](#caching-at-the-object-level)
+    * [Cuando actualizar la caché](#when-to-update-the-cache)
+        * [Caché en segundo plano](#cache-aside)
+        * [Escribir a través](#write-through)
+        * [Escribir hacia atras](#write-behind-write-back)
+        * [Actualizar con anticipación](#refresh-ahead)
+* [Asincronismo](#asynchronism)
+    * [Colas de mensajes](#message-queues)
+    * [Colas de tareas](#task-queues)
+    * [Contrapresión](#back-pressure)
+* [Comunicación](#communication)
+    * [Protocolo de Control de Transmisión (TPC)](#transmission-control-protocol-tcp)
+    * [Protocolo de Datagrama de Usuario (UDP)](#user-datagram-protocol-udp)
+    * [Llamada a procedimiento remoto (RPC)](#remote-procedure-call-rpc)
+    * [Transferencia de estado representacional (REST)](#representational-state-transfer-rest)
+* [Seguridad](#security)
+* [Apendice](#appendix)
+    * [Tabla de potencias de dos](#powers-of-two-table)
+    * [Números de latencia que todo programador debe conocer](#latency-numbers-every-programmer-should-know)
+    * [Preguntas adicionales de la entrevista sobre el diseño del sistema](#additional-system-design-interview-questions)
+    * [Arquitecturas del mundo real](#real-world-architectures)
+    * [Arquitecturas de empresas](#company-architectures)
+    * [Blogs de ingeniería de empresas](#company-engineering-blogs)
+* [Bajo desarrollo](#under-development)
+* [Créditos](#credits)
+* [Informacion de contacto](#contact-info)
+* [licencia](#license)
+
+## Guia de estudio
+
+> Temas sugeridos para revisar según el cronograma de su entrevista (corto, medio, largo) plazo.
+
+![Imgur](images/OfVllex.png)
+
+**Q: Para entrevistados, necesito saber todos estos temas?**
+
+**A: No, no necesitas saber todo aqui para prepararte para le entrevista**.
+
+What you are asked in an interview depends on variables such as:
+Lo que se te pregunta en una entrevista depende de variables como:
+
+* Cuanta experiencia tienes
+* Cuales son tus antecedentes tecnicos
+* Para qué puestos estás entrevistando
+* Con qué empresas estás entrevistando
+* Suerte
+
+Por lo general, se espera que los candidatos con más experiencia sepan más sobre el diseño de sistemas. Se puede esperar que los arquitectos o líderes de equipo sepan más que los colaboradores individuales. Es probable que las empresas de alta tecnología tengan una o más rondas de entrevistas de diseño.
+
+Comience amplio y profundice en algunas áreas. Es útil saber un poco sobre varios temas clave del diseño de sistemas. Ajuste la siguiente guía en función de su cronograma, experiencia, para qué puestos está entrevistando y con qué empresas está entrevistando.
