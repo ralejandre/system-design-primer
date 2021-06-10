@@ -204,9 +204,9 @@ Por lo general, se espera que los candidatos con más experiencia sepan más sob
 
 Comience amplio y profundice en algunas áreas. Es útil saber un poco sobre varios temas clave del diseño de sistemas. Ajuste la siguiente guía en función de su cronograma, experiencia, para qué puestos está entrevistando y con qué empresas está entrevistando.
 
-* ** Corto Plazo **: apunta a la ** amplitud ** con los temas de diseño del sistema. Practica resolviendo ** algunas ** preguntas de la entrevista.
-* ** Mediano Plazo **: apunta a ** amplitud ** y ** algo de profundidad ** con los temas de diseño del sistema. Practica resolviendo ** muchas ** preguntas de la entrevista.
-* ** Largo Plazo ** - Apunta a ** amplitud ** y ** más profundidad ** con temas de diseño de sistemas. Practica resolviendo la ** mayoría ** de las preguntas de la entrevista.
+* **Corto Plazo**: apunta a la **amplitud** con los temas de diseño del sistema. Practica resolviendo ** algunas ** preguntas de la entrevista.
+* **Mediano Plazo**: apunta a **amplitud** y **algo de profundidad** con los temas de diseño del sistema. Practica resolviendo ** muchas ** preguntas de la entrevista.
+* **Largo Plazo** - Apunta a **amplitud** y **más profundidad** con temas de diseño de sistemas. Practica resolviendo la **mayoría** de las preguntas de la entrevista.
 
 | | Corto | Mediano | Largo |
 |---|---|---|---|
@@ -222,7 +222,7 @@ Comience amplio y profundice en algunas áreas. Es útil saber un poco sobre var
 
 > Cómo abordar una pregunta de entrevista de diseño de sistema.
 
-La entrevista de diseño de sistemas es un **conversacion abiert**. Tu debes ser quien la dirija.
+La entrevista de diseño de sistemas es un **conversacion abierta**. Tu debes ser quien la dirija.
 
 Puedes usar los siguientes pasos para guiar la conversacion. Para ayudar a solidificar el proceso, trabaja a traves de la session de [Preguntas de la entrevista de diseño del sistema con soluciones](#system-design-interview-questions-with-solutions) usando los siguintes pasos.
 
@@ -358,6 +358,8 @@ Consulte los siguientes enlaces para tener una mejor idea de qué esperar:
 > Preguntas comunes de entrevista de diseño orientado a objetos con ejemplos de dialogo, codigo y diagramas.
 >
 > Soluciones vinculadas al contenido estan la carpeta de `solutions/`.
+
+>**Nota: Esta seccion se encuentra bajo desarrollo**
 
 | Preguntas | |
 |---|---|
