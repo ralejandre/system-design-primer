@@ -203,3 +203,169 @@ Lo que se te pregunta en una entrevista depende de variables como:
 Por lo general, se espera que los candidatos con más experiencia sepan más sobre el diseño de sistemas. Se puede esperar que los arquitectos o líderes de equipo sepan más que los colaboradores individuales. Es probable que las empresas de alta tecnología tengan una o más rondas de entrevistas de diseño.
 
 Comience amplio y profundice en algunas áreas. Es útil saber un poco sobre varios temas clave del diseño de sistemas. Ajuste la siguiente guía en función de su cronograma, experiencia, para qué puestos está entrevistando y con qué empresas está entrevistando.
+
+* ** Corto Plazo **: apunta a la ** amplitud ** con los temas de diseño del sistema. Practica resolviendo ** algunas ** preguntas de la entrevista.
+* ** Mediano Plazo **: apunta a ** amplitud ** y ** algo de profundidad ** con los temas de diseño del sistema. Practica resolviendo ** muchas ** preguntas de la entrevista.
+* ** Largo Plazo ** - Apunta a ** amplitud ** y ** más profundidad ** con temas de diseño de sistemas. Practica resolviendo la ** mayoría ** de las preguntas de la entrevista.
+
+| | Corto | Mediano | Largo |
+|---|---|---|---|
+| Lee sobre [temas de diseño de sistemas](#index-of-system-design-topics) para obtener una comprensión amplia de cómo funcionan los sistemas | :+1: | :+1: | :+1: |
+| Lea algunos artículos sobre [Blogs de ingeniería de empresas](#company-engineering-blogs) para las empresas con las que está entrevistando | :+1: | :+1: | :+1: |
+| Lea algunos [Arquitecturas del mundo real](#real-world-architectures) | :+1: | :+1: | :+1: |
+| Revisa [Cómo abordar una pregunta de entrevista de diseño de sistema](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| Trabaja a través de [Preguntas de la entrevista de diseño del sistema con soluciones](#system-design-interview-questions-with-solutions) | Algunos | Muchos | La mayoría |
+| Trabaja a través de [Preguntas de entrevista de diseño orientado a objetos con soluciones](#object-oriented-design-interview-questions-with-solutions) | Algunos | Muchos | La mayoría |
+| Revisa [Preguntas adicionales de la entrevista sobre el diseño del sistema](#additional-system-design-interview-questions) | Algunos | Muchos | La mayoría |
+
+## Como abordar una pregunta de entrevista de diseño de sistemas
+
+> Cómo abordar una pregunta de entrevista de diseño de sistema.
+
+La entrevista de diseño de sistemas es un **conversacion abiert**. Tu debes ser quien la dirija.
+
+Puedes usar los siguientes pasos para guiar la conversacion. Para ayudar a solidificar el proceso, trabaja a traves de la session de [Preguntas de la entrevista de diseño del sistema con soluciones](#system-design-interview-questions-with-solutions) usando los siguintes pasos.
+
+### Paso 1: Describir casos de uso, restricciones y suposiciones.
+
+Reune requerimientos y alcance del problema. Haz preguntas para aclarar casos de uso y restricciones. Dialoga suposiciones.
+
+* Quien lo usara?
+* Como lo usaran?
+* Cuantos usuarios habra?
+* Que hace el sistema?
+* Cuales son las entradas y salidas del sistema?
+* Cuanta informacion es esperada manejar?
+* Cuantas peticiones por segundo se espera manejar?
+* Cuál es la proporción esperada de lectura a escritura?
+
+## Paso 2: Crea un diseño de alto nivel
+
+Esboce un diseño de alto nivel con todos los componentes importantes.
+
+* Realiza un bosquejo de los componentes principales y sus connecciones
+* Justifica tus ideas
+
+## Paso 3: Diseña componentes centrales
+
+Profundiza en cada uno de los componentes centrales. Por ejemplo, si se te preguntara que [diseñes un servicio de acortamiento de urls](solutions/system_design/pastebin/README.md), discute:
+
+* Generacion y almacenamiento de un hash de el url completo
+    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
+    * Collisiones hash
+    * SQL o NoSQL
+    * Esquema de base de datos
+* Traduciones el url hasheado al url completo
+    * Busqueda en la base de datos
+* API y diseño orientado a objectos
+
+## Paso 4: Escala y diseño
+
+Identifica y aborda enbotellamientos, dadas las restricciones. Por ejemplo, necesitas lo siguiente para abordar asuntos de escalabilidad?
+
+* Equilibrador de carga
+* Escalamiento horizontal
+* Almacenamiento en caché
+* Fragmentación de la base de datos
+
+Dialoga las posibles soluciones y compensaciones. Todo es una compensación. Aborda enbotellamientos usando [los principios diseño de sistemas escalables](#index-of-system-design-topics).
+
+### Cálculos del reverso del sobre
+
+Se te podria preguntar que hagas unos calculos a mano. Dirigite al [Apendice](#appendix) para los siguientes recursos.
+
+* [Utilice los cálculos del reverso del sobre](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Tabla de potencias de dos](#powers-of-two-table)
+* [Números de latencia que todo programador debe conocer](#latency-numbers-every-programmer-should-know)
+
+### Fuente (s) y lectura adicional
+
+Consulte los siguientes enlaces para tener una mejor idea de qué esperar:
+
+* [Cómo lograr una entrevista de diseño de sistemas](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [La entrevista de diseño del sistema](http://www.hiredintech.com/system-design)
+* [Introducción a las entrevistas de diseño de sistemas y arquitectura](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [Plantilla de diseño del sistema](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+
+## Preguntas de entrevista sobre diseño de sistemas con soluciones
+
+> Preguntas comunes de entrevista sobre diseño de sistemas con ejemplos de dialogo, codigo y diagramas.
+>
+> Soluciones vinculadas al contenido estan la carpeta de `solutions/`.
+
+| Question | |
+|---|---|
+| Diseña un Pastebin.com (o Bit.ly) | [Solucion](solutions/system_design/pastebin/README.md) |
+| Diseña la busqueda y el muro en Twitter (o la busqueda y el muro de Facebook ) | [Solucion](solutions/system_design/twitter/README.md) |
+| Diseña rastreador web | [Solucion](solutions/system_design/web_crawler/README.md) |
+| Diseña Mint.com | [Solucion](solutions/system_design/mint/README.md) |
+| Diseña la estructura de datos de una red social | [Solucion](solutions/system_design/social_graph/README.md) |
+| Diseña un almancemiento de clave-valor para un motor de busqueda | [Solucion](solutions/system_design/query_cache/README.md) |
+| Diseña el ranking de ventas de Amazon por función de categoría | [Solucion](solutions/system_design/sales_rank/README.md) |
+| Diseña un sistema que se escale a millones de usuarios en AWS | [Solucion](solutions/system_design/scaling_aws/README.md) |
+| Agregar una pregunta de diseño del sistema | [Contribuye](#contributing) |
+
+### Diseña un Pastebin.com (o Bit.ly)
+
+[Ver ejercicio y solución](solutions/system_design/pastebin/README.md)
+
+![Imgur](images/4edXG0T.png)
+
+### Diseña la busqueda y el muro en Twitter (o la busqueda y el muro de Facebook )
+
+[Ver ejercicio y solución](solutions/system_design/twitter/README.md)
+
+![Imgur](images/jrUBAF7.png)
+
+### Diseña rastreador web
+
+[Ver ejercicio y solución](solutions/system_design/web_crawler/README.md)
+
+![Imgur](images/bWxPtQA.png)
+
+### Diseña Mint.com
+
+[Ver ejercicio y solución](solutions/system_design/mint/README.md)
+
+![Imgur](images/V5q57vU.png)
+
+### Diseña la estructura de datos de una red social
+
+[Ver ejercicio y solución](solutions/system_design/social_graph/README.md)
+
+![Imgur](images/cdCv5g7.png)
+
+### Diseña el almancemiento clave-valor para un motor de busqueda
+
+[Ver ejercicio y solución](solutions/system_design/query_cache/README.md)
+
+![Imgur](images/4j99mhe.png)
+
+### Diseña el ranking de ventas de Amazon por función de categoría
+
+[Ver ejercicio y solución](solutions/system_design/sales_rank/README.md)
+
+![Imgur](images/MzExP06.png)
+
+### Diseña un sistema que se escale a millones de usuarios en AWS
+
+[Ver ejercicio y solución](solutions/system_design/scaling_aws/README.md)
+
+![Imgur](images/jj3A5N8.png)
+
+## Preguntas de entrevista de diseño orientado a objetos con soluciones
+
+> Preguntas comunes de entrevista de diseño orientado a objetos con ejemplos de dialogo, codigo y diagramas.
+>
+> Soluciones vinculadas al contenido estan la carpeta de `solutions/`.
+
+| Preguntas | |
+|---|---|
+| Diseña un mapa hash | [Solucion](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Diseñar una caché usada menos recientemente | [Solucion](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Diseñar un centro de llamadas | [Solucion](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Diseña una baraja de cartas | [Solucion](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Diseñar un estacionamiento | [Solucion](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Diseña un servidor de chat | [Solucion](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Diseña una arreglo circular | [Contribuye](#contributing)  |
+| Agregar una pregunta de diseño orientado a objetos | [Contribuye](#contributing) |
