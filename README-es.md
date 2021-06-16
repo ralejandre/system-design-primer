@@ -371,3 +371,106 @@ Consulte los siguientes enlaces para tener una mejor idea de qué esperar:
 | Diseña un servidor de chat | [Solución](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
 | Diseña una arreglo circular | [Contribuye](#contributing)  |
 | Agregar una pregunta de diseño orientado a objetos | [Contribuye](#contributing) |
+
+Topicos de diseño de sistemas: Empiezan aqui
+
+Es diseño de sistemas nuevo para ti?
+
+Primero, necesitaras una comprension basica de los principios comunes, aprender sobre lo que son, como son usados y sus pros y contras.
+
+### Paso 1: Revisa la video lectura de escalabilidad
+
+[Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
+
+* Temas cubiertos
+    * Escalamiento vertical
+    * Escalamiento Horizontal
+    * Almacenamiento en caché
+    * Balanceo de carga
+    * Replicación de base de datos
+    * Particionamiento de base de datos
+
+### Paso 2: Revisa el articulo de escalabilad
+
+[Escalabilidad](http://www.lecloud.net/tagged/scalability/chrono)
+
+* Temas cubiertos:
+    * [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+    * [Base de datos](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+    * [Almacenamiento en caché](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+    * [Asincronismo](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+
+### Siguientes pasos
+
+En seguida, veremos compensaciones de alto nivel.
+
+* **Desempeño** vs **escalabilidad**
+* **Latencia** vs **rendimiento**
+* **Disponibilidad** vs **consistencia**
+
+Recuerda que **todo siempre es una compensacion, es una cosa por otra**.
+
+Despues nos adentraremos a temas mas especificios como DNS, CDNs y balanceo de carga.
+
+## Desempeño vs escalabilidad
+
+Un servicio es **escalable** si su **desempeño** incrementa de manera proporcional a los recursos agregados. Generalmente, el incremento de desempeño significa poder atender mas unidades de trabajo, como por ejemplo cuando bases de datos crecen. <sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+
+Otra manera de ver desempeño vs escalabilidad:
+
+* Si tienes un problema de **desempeño**, tu sistema es lento para un usuario.
+* Si tienes un problema de **escalabilidad**, tu sistema es rapido para un solo usuario pero lento bajo una gran carga.
+
+### Fuente(s) y otras lecturas
+
+* [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+
+
+## Latencia vs rendimiento
+
+**Latencia** es el tiempo que lleva realizar una accion o producir un resultado.
+
+**Rendimiento** es el numero de acciones o resultados por unidad de tiempo.
+
+Generalmente, debes apuntar a **maximo rendimiento** con **latencia aceptable**.
+
+### Fuente(s) y otras lecturas
+
+* [Entendiendo latencia vs rendimiento](https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput)
+
+## Disponibilidad vs consistencia
+
+### Teorema CAP
+
+<p align="center">
+  <img src="images/bgLMI2u.png">
+  <br/>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+</p>
+
+En un sistema distribuido por computadora, solo puedes mantener dos de las siguientes garantias:
+
+* **Consistencia** - Cada lectura recive la lectura o error mas reciente.
+* **Disponibilidad** - Cada petition recibe una respuesta sin la garantia de que contenga la version mas reciente de la informacion.
+* **Particion de tolerancia** - El sistema continua operando a pesar del particionamiento arbituario debido a fallas en la red.
+
+*Redes no son de confianza, asi que debes de mantener la particion de tolerancia. Se debe de considerar que option tomar entre consistencia y disponibilidad*
+
+### CP - consistencia y particion de tolerancia
+
+Esperar una respuesta de un nodo particionado podria resultar en un error de tiempo de espera. CP es una buena idea si tu negocio require de lecturas y escrituras atomicas.
+
+### DP - disponibilidad y particion de tolerancia
+
+Las respuestas devuelven la versión más fácilmente disponible de los datos disponibles en cualquier nodo, la cual podria no ser la mas reciente. Escrituras podrian tardar un poco en propagar cuando la particion esta resuelta.
+
+DP es una opcion si las necesidades del negocio permiten [consistencia eventual](#eventual-consistency) o cuando el sistema necesita continuar a pesar de errores externos.
+
+### fuente(s) y otras lecturas
+
+* [Teorema CAP revisitado](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
+* [Una introducción en inglés sencillo al teorema de CAP](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+* [CAP FAQ](https://github.com/henryr/cap-faq)
+* [El teorema CAP](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+
